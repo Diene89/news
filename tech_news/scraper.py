@@ -19,14 +19,14 @@ def fetch(url):
 
 def scrape_novidades(html_content):
     selector = parsel.Selector(html_content)
-
     url_news = selector.css(".cs-overlay-link::attr(href)").getall()
     return url_news
 
 
-# Requisito 3
 def scrape_next_page_link(html_content):
-    """Seu código deve vir aqui"""
+    selector = parsel.Selector(html_content)
+    next_page = selector.css(".next.page-numbers::attr(href)").get()
+    return next_page
 
 
 # Requisito 4
