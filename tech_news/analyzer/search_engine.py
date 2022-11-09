@@ -21,13 +21,13 @@ def search_by_title(title):
 
 def search_by_date(date):
     try:
-        datetime.strptime(date, "%Y-%m-%d")
+        formatted_date = datetime.strptime(date, "%Y-%m-%d").strftime("%d/%m/%Y")
+        news_list = search_news({"timestamp": formatted_date})
+
+        return formatted_news_elements(news_list)
+
     except ValueError:
         raise ValueError("Data inválida")
-
-    news_list = search_news({"timestamp": {"$regex": date, "$options": "i"}})
-
-    return formatted_news_elements(news_list)
 
 
 def search_by_tag(tag):
