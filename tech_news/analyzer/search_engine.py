@@ -1,4 +1,5 @@
 from tech_news.database import search_news
+from datetime import datetime
 
 
 def formatted_news_elements(news):
@@ -12,23 +13,24 @@ def formatted_news_elements(news):
 
 
 def search_by_title(title):
-    news_list = search_news(
-        {"title": {"$regex": f"{title}", "$options": "i"}}
-    )
+    news_list = search_news({"title": {"$regex": f"{title}", "$options": "i"}})
   
     return formatted_news_elements(news_list)
 
 
-# Requisito 7
 def search_by_date(date):
-    """Seu código deve vir aqui"""
+    try:
+        datetime.strptime(date, "%Y-%m-%d")
+    except ValueError:
+        raise ValueError("Data inválida")
+
+    news_list = search_news({"timestamp": {"$regex": date, "$options": "i"}})
+
+    return formatted_news_elements(news_list)
 
 
-# Requisito 8
 def search_by_tag(tag):
     """Seu código deve vir aqui"""
 
-
-# Requisito 9
 def search_by_category(category):
     """Seu código deve vir aqui"""
