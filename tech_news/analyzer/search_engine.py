@@ -1,6 +1,22 @@
-# Requisito 6
+from tech_news.database import search_news
+
+
+def formatted_news_elements(news):
+    news_list = []
+
+    for new in news_list:
+        formatted_news = (new["title"], new["url"])
+        news_list.append(formatted_news)
+
+    return news_list
+
+
 def search_by_title(title):
-    """Seu código deve vir aqui"""
+    news_list = search_news(
+        {"title": {"$regex": f"{title}", "$options": "i"}}
+    )
+  
+    return formatted_news_elements(news_list)
 
 
 # Requisito 7
