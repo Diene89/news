@@ -21,7 +21,8 @@ def search_by_title(title):
 
 def search_by_date(date):
     try:
-        formatted_date = datetime.strptime(date, "%Y-%m-%d").strftime("%d/%m/%Y")
+        formatted_date = datetime.strptime(
+            date, "%Y-%m-%d").strftime("%d/%m/%Y")
         news_list = search_news({"timestamp": formatted_date})
 
         return formatted_news_elements(news_list)
@@ -31,14 +32,16 @@ def search_by_date(date):
 
 
 def search_by_tag(tag):
-    news_list = search_news({"sources": {"$regex": tag, "$options": "i"}})
+    news_list = search_news(
+        {"tags": {"$elemMatch": {"$regex": tag, "$options": "i"}}}
+    )
 
     return formatted_news_elements(news_list)
 
 
 def search_by_category(category):
     news_list = search_news(
-        {"categories": {"$regex": category, "$options": "i"}}
+        {"category": {"$regex": f"{category}", "$options": "i"}}
     )
 
     return formatted_news_elements(news_list)
