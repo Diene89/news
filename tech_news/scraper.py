@@ -65,8 +65,7 @@ def get_tech_news(amount):
 
         for new in get_url_news:
             news_content = fetch(new)
-            url_news.append(scrape_noticia(news_content))
-       
+            url_news.append(scrape_noticia(news_content))     
         url = scrape_next_page_link(get_page_content)
     create_news(url_news[:amount])
     return url_news[:amount]
