@@ -1,5 +1,6 @@
-from tech_news.database import search_news
 from datetime import datetime
+
+from tech_news.database import search_news
 
 
 def formatted_news_elements(news):
@@ -14,7 +15,7 @@ def formatted_news_elements(news):
 
 def search_by_title(title):
     news_list = search_news({"title": {"$regex": f"{title}", "$options": "i"}})
-  
+
     return formatted_news_elements(news_list)
 
 
@@ -36,4 +37,8 @@ def search_by_tag(tag):
 
 
 def search_by_category(category):
-    """Seu código deve vir aqui"""
+    news_list = search_news(
+        {"categories": {"$regex": category, "$options": "i"}}
+    )
+
+    return formatted_news_elements(news_list)
