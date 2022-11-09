@@ -32,5 +32,6 @@ def search_by_date(date):
 def search_by_tag(tag):
     """Seu código deve vir aqui"""
 
+
 def search_by_category(category):
     """Seu código deve vir aqui"""
