@@ -1,16 +1,18 @@
 # 🚧 README em construção 🚧
 
-<!-- Olá, Tryber!
+# Football Score
 
-Esse é apenas um arquivo inicial para o README do seu projeto.
+## Sobre
 
-É essencial que você preencha esse documento por conta própria, ok?
+O objetivo desse projeto foi desenvolver um cralwer para raspar dados de notícias do blog da Trybe.<br>
 
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
+## Desafios
+[x] Escrever seus próprios módulos e importá-los em outros códigos;
+[x] Aplicar técnicas de raspagem de dados;
+[x] Extrair dados de conteúdo HTML;
+[x] Armazenar os dados obtidos em um banco de dados;
 
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
+## Ferramentas utilizadas
 
--->
+* Python
+* TPytest
