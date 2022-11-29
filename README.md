@@ -15,4 +15,4 @@ O objetivo desse projeto foi desenvolver um cralwer para raspar dados de notíci
 ## Ferramentas utilizadas
 
 * Python
-* TPytest
+* Pytest
